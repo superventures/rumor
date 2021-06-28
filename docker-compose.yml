@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+    db:
+        image: postgres:13
+        container_name: rumor-db
+        ports:
+            - '5432:5432'
+        restart: always
+        environment:
+            POSTGRES_USER: rumor-admin
+            POSTGRES_PASSWORD: asdfasdf
+            POSTGRES_DB: rumordb
+    cache:
+        image: redis:6
+        container_name: rumor-cache
+        ports:
+            - '6379:6379'
+        restart: always
